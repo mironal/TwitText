@@ -1,10 +1,8 @@
 package com.github.mironal.twitter.twittext
+
 import twitter4j.Status;
 import twitter4j.Twitter;
-import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
-import twitter4j.auth.AccessToken;
-import twitter4j.auth.RequestToken;
 
 object App {
   def main(args: Array[String]) {
