@@ -8,19 +8,25 @@ object App {
   def main(args: Array[String]) {
     args.toList match {
       case Nil => usage()
-      case xs  => tweet(xs)
+      case "-s"::xs => tweet(xs)
+      case xs  => tweetWithPrint(xs)
     }
   }
 
-  def tweet(args: List[String]) {
+
+  def tweet(args: List[String]):Status = {
     val text = args.mkString(" ")
     val twitter = new TwitterFactory().getInstance()
-    val status = twitter.updateStatus(text)
-    println(status.getText())
-
+    twitter.updateStatus(text)
   }
 
+  def tweetWithPrint(args: List[String]) = println(tweet(args).getText())
+
+
+
   def usage() {
-    println("java -jar TweetText.jar text to tweet")
+    println("java -jar TweetText.jar [text to tweet]")
+    println("no stdout. -s option.")
+    println("java -jar TweetText.jar -s [text to tweet]");
   }
 }
