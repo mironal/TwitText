@@ -4,12 +4,12 @@ name := "TwitText"
 
 organization := "com.github.mironal.twitter"
 
-version := "0.1.0-SNAPSHOT"
+version := "0.2.0"
 
 scalaVersion := "2.10.0"
 
 libraryDependencies ++= Seq(
-  "org.twitter4j" % "twitter4j-core" % "3.0.3",
+  "org.twitter4j" % "twitter4j-core" % "3.0.5",
   "org.specs2" %% "specs2" % "1.13" % "test"
 )
 
